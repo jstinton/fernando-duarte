@@ -1,7 +1,15 @@
 [
   {
     "id": "gu-01",
-    "src": "/images/gender-undefined/",
+    "src": "/images/gender-undefined/gender-undefined-1.png",
+    "alt": "Fernando Duarte — Gender Undefined editorial",
+    "caption": "",
+    "credit": "",
+    "featured": true
+  },
+  {
+    "id": "gu-02",
+    "src": "/images/gender-undefined/gender-undefined-2.jpg",
     "alt": "Fernando Duarte — Gender Undefined editorial",
     "caption": "",
     "credit": "",
