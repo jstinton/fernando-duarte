@@ -10,11 +10,14 @@ const navLinks = [
 ];
 
 const currentPath = Astro.url.pathname;
+const isHome = currentPath === '/';
+const textColor = isHome ? 'text-white' : 'text-black';
+const burgerColor = isHome ? 'bg-white' : 'bg-black';
 ---
 
-<header id="site-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+<header id="site-nav" class={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${!isHome ? 'bg-white/95 backdrop-blur-sm border-b border-black/10' : ''}`}>
   <div class="max-w-screen-xl mx-auto px-6 py-5 flex items-center justify-between">
-    <a href="/" id="nav-logo" class="font-display text-white text-xl italic tracking-wide hover:opacity-50 transition-opacity">
+    <a href="/" id="nav-logo" class={`font-display text-xl italic tracking-wide hover:opacity-50 transition-opacity ${textColor}`}>
       Fernando Duarte
     </a>
 
@@ -23,7 +26,7 @@ const currentPath = Astro.url.pathname;
       {navLinks.map(link => (
         <a
           href={link.href}
-          class={`nav-link font-body text-[11px] tracking-[0.25em] uppercase transition-opacity hover:opacity-40 ${currentPath === link.href ? 'opacity-100' : 'opacity-60'} text-white`}
+          class={`nav-link font-body text-[11px] tracking-[0.25em] uppercase transition-opacity hover:opacity-40 ${currentPath === link.href ? 'opacity-100' : 'opacity-60'} ${textColor}`}
         >
           {link.label}
         </a>
@@ -32,9 +35,9 @@ const currentPath = Astro.url.pathname;
 
     <!-- Mobile hamburger -->
     <button id="menu-toggle" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Toggle menu">
-      <span class="w-6 h-px bg-white block transition-all" id="burger-1"></span>
-      <span class="w-6 h-px bg-white block transition-all" id="burger-2"></span>
-      <span class="w-4 h-px bg-white block transition-all" id="burger-3"></span>
+      <span class={`w-6 h-px block transition-all ${burgerColor}`} id="burger-1"></span>
+      <span class={`w-6 h-px block transition-all ${burgerColor}`} id="burger-2"></span>
+      <span class={`w-4 h-px block transition-all ${burgerColor}`} id="burger-3"></span>
     </button>
   </div>
 
@@ -54,27 +57,29 @@ const currentPath = Astro.url.pathname;
 </header>
 
 <script>
+  const isHome = window.location.pathname === '/';
   const nav = document.getElementById('site-nav');
   const toggle = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
-
   const logo = document.getElementById('nav-logo');
-  const navLinks = document.querySelectorAll('.nav-link');
+  const links = document.querySelectorAll('.nav-link');
   const burgers = [document.getElementById('burger-1'), document.getElementById('burger-2'), document.getElementById('burger-3')];
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 80) {
-      nav?.classList.add('bg-white/95', 'backdrop-blur-sm', 'border-b', 'border-black/10');
-      logo?.classList.replace('text-white', 'text-black');
-      navLinks.forEach(l => { l.classList.replace('text-white', 'text-black'); });
-      burgers.forEach(b => { b?.classList.replace('bg-white', 'bg-black'); });
-    } else {
-      nav?.classList.remove('bg-white/95', 'backdrop-blur-sm', 'border-b', 'border-black/10');
-      logo?.classList.replace('text-black', 'text-white');
-      navLinks.forEach(l => { l.classList.replace('text-black', 'text-white'); });
-      burgers.forEach(b => { b?.classList.replace('bg-black', 'bg-white'); });
-    }
-  });
+  if (isHome) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 80) {
+        nav?.classList.add('bg-white/95', 'backdrop-blur-sm', 'border-b', 'border-black/10');
+        logo?.classList.replace('text-white', 'text-black');
+        links.forEach(l => l.classList.replace('text-white', 'text-black'));
+        burgers.forEach(b => b?.classList.replace('bg-white', 'bg-black'));
+      } else {
+        nav?.classList.remove('bg-white/95', 'backdrop-blur-sm', 'border-b', 'border-black/10');
+        logo?.classList.replace('text-black', 'text-white');
+        links.forEach(l => l.classList.replace('text-black', 'text-white'));
+        burgers.forEach(b => b?.classList.replace('bg-black', 'bg-white'));
+      }
+    });
+  }
 
   toggle?.addEventListener('click', () => {
     mobileMenu?.classList.toggle('hidden');
