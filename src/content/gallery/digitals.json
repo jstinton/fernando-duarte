@@ -1,5 +1,11 @@
 [
   {
+    "id": "digitals-headshot",
+    "src": "/images/digitals/HEADSHOT.jpeg",
+    "alt": "Fernando Duarte — headshot, natural light",
+    "label": "Headshot"
+  },
+  {
     "id": "digitals-full",
     "src": "/images/digitals/",
     "alt": "Fernando Duarte — full body, natural light",
@@ -16,11 +22,5 @@
     "src": "/images/digitals/",
     "alt": "Fernando Duarte — profile, natural light",
     "label": "Profile"
-  },
-  {
-    "id": "digitals-headshot",
-    "src": "/images/digitals/",
-    "alt": "Fernando Duarte — headshot, natural light",
-    "label": "Headshot"
   }
 ]
