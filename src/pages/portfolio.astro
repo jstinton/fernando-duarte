@@ -3,11 +3,13 @@ import Layout from '../layouts/Layout.astro';
 import dance from '../content/gallery/dance.json';
 import fitness from '../content/gallery/fitness.json';
 import editorial from '../content/gallery/editorial.json';
+import genderUndefined from '../content/gallery/gender-undefined.json';
 
 const categories = [
   { id: 'dance', label: 'Dance / Performance', items: dance },
   { id: 'fitness', label: 'Fitness / Physique', items: fitness },
   { id: 'editorial', label: 'Editorial / Fashion', items: editorial },
+  { id: 'gender-undefined', label: 'Gender Undefined', items: genderUndefined },
 ];
 
 function hasRealImages(items: { src: string }[]) {

@@ -5,42 +5,33 @@ import site from '../content/site.json';
 
 <Layout title="Fernando Duarte — Dancer & Model">
   <!-- HERO -->
-  <section class="relative min-h-screen flex flex-col justify-between pt-32 pb-12 bg-white overflow-hidden">
+  <section class="relative min-h-screen flex flex-col bg-white overflow-hidden">
 
-    <!-- Top: tagline -->
-    <div class="relative z-10 px-6 md:px-12 opacity-0" data-gsap="hero-sub">
-      <p class="font-body text-[11px] tracking-[0.4em] uppercase text-black/40">
+    <!-- Spacer for nav -->
+    <div class="h-24 md:h-28 flex-shrink-0"></div>
+
+    <!-- Name — scales to fit viewport width -->
+    <div class="relative z-10 px-4 md:px-10 flex-1 flex flex-col justify-center">
+      <p class="font-body text-[10px] tracking-[0.4em] uppercase text-black/40 mb-6 opacity-0" data-gsap="hero-sub">
         Dancer &nbsp;·&nbsp; Model &nbsp;·&nbsp; Artist
       </p>
-    </div>
-
-    <!-- Middle: full-width name -->
-    <div class="relative z-10 px-6 md:px-12">
-      <h1 class="font-display leading-[0.88] tracking-tight" id="hero-name">
-        <span class="block text-[clamp(2.5rem,6vw,7rem)] text-black opacity-0" data-gsap="hero-line">Fernando</span>
-        <span class="block text-[clamp(2.5rem,6vw,7rem)] text-black opacity-0" data-gsap="hero-line">Duarte</span>
+      <h1 class="font-display leading-[0.88]" id="hero-name">
+        <span class="block text-[12vw] md:text-[7vw] lg:text-[6rem] text-black opacity-0" data-gsap="hero-line">Fernando</span>
+        <span class="block text-[12vw] md:text-[7vw] lg:text-[6rem] text-black opacity-0" data-gsap="hero-line">Duarte</span>
       </h1>
     </div>
 
-    <!-- Bottom: CTAs + scroll -->
-    <div class="relative z-10 px-6 md:px-12 flex flex-col sm:flex-row sm:items-center justify-between gap-6 opacity-0" data-gsap="hero-sub">
-      <div class="flex gap-4">
-        <a href="/portfolio" class="inline-block font-body text-[11px] tracking-[0.25em] uppercase bg-black text-white px-6 py-3 hover:bg-black/70 transition-colors">
-          View Work
-        </a>
-        <a href="/contact" class="inline-block font-body text-[11px] tracking-[0.25em] uppercase border border-black text-black px-6 py-3 hover:bg-black hover:text-white transition-colors">
-          Book Now
-        </a>
-      </div>
-      <div class="flex items-center gap-3 opacity-30">
-        <div class="w-8 h-px bg-black"></div>
-        <span class="font-body text-[10px] tracking-[0.3em] uppercase text-black">Scroll</span>
-      </div>
+    <!-- CTAs -->
+    <div class="relative z-10 px-4 md:px-10 pb-12 flex flex-wrap gap-4 opacity-0" data-gsap="hero-sub">
+      <a href="/portfolio" class="inline-block font-body text-[11px] tracking-[0.25em] uppercase bg-black text-white px-6 py-3 hover:bg-black/70 transition-colors">
+        View Work
+      </a>
+      <a href="/contact" class="inline-block font-body text-[11px] tracking-[0.25em] uppercase border border-black text-black px-6 py-3 hover:bg-black hover:text-white transition-colors">
+        Book Now
+      </a>
     </div>
 
-    <!-- Placeholder note for hero image -->
-    <!-- To add a hero image: place file at /public/images/hero/hero-main.jpg
-         then add inside the section:
+    <!-- To add a hero image: place at /public/images/hero/hero-main.jpg then add:
          <img src="/images/hero/hero-main.jpg" alt="Fernando Duarte" class="absolute inset-0 w-full h-full object-cover grayscale opacity-15" />
     -->
   </section>
@@ -106,6 +97,27 @@ import site from '../content/site.json';
             </div>
           </div>
           <div class="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300"></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GENDER UNDEFINED BAND -->
+  <section class="py-24 px-6 bg-black text-white" data-gsap-section>
+    <div class="max-w-screen-xl mx-auto flex flex-col md:flex-row md:items-center gap-8 md:gap-20">
+      <div class="md:w-1/2 aspect-[3/4] bg-white/5 relative overflow-hidden group">
+        <div class="absolute inset-0 flex items-center justify-center text-white/10 font-body text-xs tracking-widest uppercase">
+          /images/gender-undefined/
+        </div>
+      </div>
+      <div class="md:w-1/2">
+        <p class="font-body text-[11px] tracking-[0.35em] uppercase text-white/40 mb-6">Editorial Series</p>
+        <h2 class="font-display text-[clamp(2.5rem,6vw,6rem)] leading-none text-white mb-8">Gender<br />Undefined</h2>
+        <p class="font-body text-white/60 text-sm leading-relaxed mb-8 max-w-sm">
+          A visual exploration of identity beyond the binary — fluid, fearless, and unapologetically Fernando.
+        </p>
+        <a href="/portfolio#gender-undefined" class="inline-block font-body text-[11px] tracking-[0.25em] uppercase border border-white text-white px-6 py-3 hover:bg-white hover:text-black transition-colors">
+          View Series
         </a>
       </div>
     </div>
