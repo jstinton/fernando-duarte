@@ -1,0 +1,86 @@
+---
+// Lightbox component — include once per page that has a GalleryGrid.
+// It listens for clicks on .gallery-item buttons and opens a full-screen overlay.
+---
+
+<div id="lightbox" class="fixed inset-0 z-[200] bg-fd-black/95 hidden items-center justify-center" role="dialog" aria-modal="true" aria-label="Image lightbox">
+  <button id="lightbox-close" class="absolute top-6 right-6 font-body text-xs tracking-widest uppercase text-fd-cream/60 hover:text-fd-cream transition-colors z-10">
+    Close ✕
+  </button>
+  <button id="lightbox-prev" class="absolute left-4 top-1/2 -translate-y-1/2 font-display text-4xl text-fd-cream/40 hover:text-fd-cream transition-colors z-10" aria-label="Previous image">‹</button>
+  <button id="lightbox-next" class="absolute right-4 top-1/2 -translate-y-1/2 font-display text-4xl text-fd-cream/40 hover:text-fd-cream transition-colors z-10" aria-label="Next image">›</button>
+  <div class="max-w-4xl max-h-screen px-16 flex flex-col items-center">
+    <img id="lightbox-img" src="" alt="" class="max-h-[80vh] object-contain" />
+    <div class="mt-4 text-center">
+      <p id="lightbox-caption" class="font-body text-sm text-fd-cream/80"></p>
+      <p id="lightbox-credit" class="font-body text-xs text-fd-cream/40 tracking-widest uppercase mt-1"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img') as HTMLImageElement;
+  const lbCaption = document.getElementById('lightbox-caption');
+  const lbCredit = document.getElementById('lightbox-credit');
+  let currentItems: any[] = [];
+  let currentIndex = 0;
+
+  document.querySelectorAll('.gallery-item').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = JSON.parse(btn.getAttribute('data-lightbox') || '{}');
+      const cat = btn.getAttribute('data-category') || '';
+      currentItems = Array.from(document.querySelectorAll(`[data-category="${cat}"]`)).map(b =>
+        JSON.parse(b.getAttribute('data-lightbox') || '{}')
+      );
+      currentIndex = parseInt(btn.getAttribute('data-index') || '0');
+      showLightbox(currentIndex);
+    });
+  });
+
+  function showLightbox(idx: number) {
+    const item = currentItems[idx];
+    if (!item || !lbImg || !lbCaption || !lbCredit || !lightbox) return;
+    lbImg.src = item.src;
+    lbImg.alt = item.alt;
+    lbCaption.textContent = item.caption || '';
+    lbCredit.textContent = item.credit || '';
+    lightbox.classList.remove('hidden');
+    lightbox.classList.add('flex');
+  }
+
+  function closeLightbox() {
+    lightbox?.classList.add('hidden');
+    lightbox?.classList.remove('flex');
+  }
+
+  document.getElementById('lightbox-close')?.addEventListener('click', closeLightbox);
+
+  document.getElementById('lightbox-prev')?.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + currentItems.length) % currentItems.length;
+    showLightbox(currentIndex);
+  });
+
+  document.getElementById('lightbox-next')?.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % currentItems.length;
+    showLightbox(currentIndex);
+  });
+
+  // Close on backdrop click
+  lightbox?.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', e => {
+    if (lightbox?.classList.contains('hidden')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') {
+      currentIndex = (currentIndex - 1 + currentItems.length) % currentItems.length;
+      showLightbox(currentIndex);
+    }
+    if (e.key === 'ArrowRight') {
+      currentIndex = (currentIndex + 1) % currentItems.length;
+      showLightbox(currentIndex);
+    }
+  });
+</script>

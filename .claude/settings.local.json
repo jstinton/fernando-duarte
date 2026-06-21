@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(source ~/.zshrc)",
+      "Bash(echo \"PATH: $PATH\")",
+      "Bash(npm --version)",
+      "Bash(ls /usr/local/bin/node /opt/homebrew/bin/node ~/.nvm/versions/node/*/bin/node)",
+      "Bash(command -v node)",
+      "Bash(gh auth:*)",
+      "Bash(git --version)"
+    ]
+  }
+}

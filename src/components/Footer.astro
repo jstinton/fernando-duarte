@@ -1,0 +1,22 @@
+---
+import site from '../content/site.json';
+---
+
+<footer class="border-t border-fd-cream/10 py-12 px-6 mt-24">
+  <div class="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+    <p class="font-display text-lg tracking-[0.15em] uppercase text-fd-cream/60">
+      Fernando Duarte
+    </p>
+    <p class="font-body text-xs text-fd-cream/40 tracking-widest uppercase">
+      &copy; {new Date().getFullYear()} Fernando Duarte · All rights reserved
+    </p>
+    <div class="flex items-center gap-6">
+      <a href={`https://instagram.com/${site.contact.instagram.replace('@','')}`} target="_blank" rel="noopener noreferrer" class="font-body text-xs tracking-[0.2em] uppercase text-fd-cream/60 hover:text-fd-red transition-colors">
+        Instagram
+      </a>
+      <a href={`mailto:${site.contact.email}`} class="font-body text-xs tracking-[0.2em] uppercase text-fd-cream/60 hover:text-fd-red transition-colors">
+        Email
+      </a>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,202 @@
+---
+import Layout from '../layouts/Layout.astro';
+import site from '../content/site.json';
+---
+
+<Layout title="Fernando Duarte — Dancer & Model">
+  <!-- HERO -->
+  <section class="relative min-h-screen flex items-end pb-16 overflow-hidden bg-fd-black">
+    <!-- Hero image placeholder -->
+    <div class="absolute inset-0 bg-gradient-to-br from-fd-black via-fd-gray to-fd-black">
+      <!-- When hero image is added: <img src="/images/hero/hero-main.jpg" alt="Fernando Duarte" class="w-full h-full object-cover opacity-60" /> -->
+      <div class="absolute inset-0 bg-gradient-to-t from-fd-black via-fd-black/30 to-transparent"></div>
+    </div>
+
+    <div class="relative z-10 max-w-screen-xl mx-auto px-6 pt-32">
+      <!-- Oversized stacked name -->
+      <h1 class="font-display leading-none uppercase tracking-tight" id="hero-name">
+        <span class="block text-[clamp(4rem,15vw,18rem)] text-fd-cream opacity-0" data-gsap="hero-line">Fernando</span>
+        <span class="block text-[clamp(4rem,15vw,18rem)] text-fd-red opacity-0 -mt-4 md:-mt-8" data-gsap="hero-line">Duarte</span>
+      </h1>
+      <div class="mt-6 md:mt-8 flex flex-col md:flex-row md:items-end gap-6 md:gap-12 opacity-0" data-gsap="hero-sub">
+        <p class="font-body text-fd-cream/70 text-sm tracking-[0.35em] uppercase">
+          Dancer &nbsp;·&nbsp; Model &nbsp;·&nbsp; Artist
+        </p>
+        <div class="flex gap-4">
+          <a href="/portfolio" class="inline-block font-body text-xs tracking-[0.2em] uppercase bg-fd-red text-fd-cream px-6 py-3 hover:bg-fd-cream hover:text-fd-black transition-colors">
+            View Work
+          </a>
+          <a href="/contact" class="inline-block font-body text-xs tracking-[0.2em] uppercase border border-fd-cream/40 text-fd-cream px-6 py-3 hover:border-fd-cream hover:bg-fd-cream/5 transition-colors">
+            Book Now
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll cue -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+      <span class="font-body text-[10px] tracking-[0.3em] uppercase text-fd-cream">Scroll</span>
+      <div class="w-px h-12 bg-fd-cream animate-pulse"></div>
+    </div>
+  </section>
+
+  <!-- FEATURED: NIGEL BARKER -->
+  <section class="py-24 px-6 border-y border-fd-cream/10" data-gsap-section>
+    <div class="max-w-screen-xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-center gap-8 md:gap-16">
+        <!-- Image placeholder -->
+        <div class="w-full md:w-1/2 aspect-[3/4] bg-fd-gray relative overflow-hidden group">
+          <div class="absolute inset-0 flex items-center justify-center text-fd-cream/20 font-body text-xs tracking-widest uppercase">
+            Featured Image — /images/featured/
+          </div>
+          <!-- hover scale effect -->
+          <div class="absolute inset-0 bg-fd-red/0 group-hover:bg-fd-red/10 transition-colors duration-500"></div>
+        </div>
+        <div class="md:w-1/2">
+          <p class="font-body text-xs tracking-[0.35em] uppercase text-fd-red mb-4">Featured Work</p>
+          <h2 class="font-display text-[clamp(2.5rem,6vw,6rem)] leading-none uppercase text-fd-cream mb-6">
+            Nigel<br />Barker
+          </h2>
+          <p class="font-body text-fd-cream/60 text-sm leading-relaxed mb-8 max-w-md">
+            An editorial collaboration with acclaimed photographer and <em>America's Next Top Model</em> judge Nigel Barker. A defining shoot that captures the intersection of dance and high fashion.
+          </p>
+          <p class="font-body text-xs tracking-[0.2em] uppercase text-fd-cream/40 mb-8">
+            Photography: Nigel Barker
+          </p>
+          <a href="/portfolio#editorial" class="inline-block font-body text-xs tracking-[0.2em] uppercase border border-fd-red text-fd-red px-6 py-3 hover:bg-fd-red hover:text-fd-cream transition-colors">
+            View Editorial
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORY PREVIEW -->
+  <section class="py-24 px-6" data-gsap-section>
+    <div class="max-w-screen-xl mx-auto">
+      <h2 class="font-display text-[clamp(2rem,5vw,5rem)] uppercase text-fd-cream mb-16 leading-none">
+        The Work
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Dance -->
+        <a href="/portfolio#dance" class="group relative aspect-[2/3] bg-fd-gray overflow-hidden block">
+          <div class="absolute inset-0 flex items-end p-6 bg-gradient-to-t from-fd-black/80 to-transparent z-10">
+            <div>
+              <p class="font-display text-2xl uppercase text-fd-cream group-hover:text-fd-red transition-colors">Dance</p>
+              <p class="font-body text-xs tracking-widest uppercase text-fd-cream/50 mt-1">Performance · Stage</p>
+            </div>
+          </div>
+          <div class="absolute inset-0 bg-fd-cream/0 group-hover:bg-fd-cream/5 transition-all duration-500 group-hover:scale-105"></div>
+          <div class="absolute inset-0 flex items-center justify-center text-fd-cream/10 font-body text-xs tracking-widest uppercase pointer-events-none">
+            /images/dance/
+          </div>
+        </a>
+        <!-- Fitness -->
+        <a href="/portfolio#fitness" class="group relative aspect-[2/3] bg-fd-gray overflow-hidden block md:mt-12">
+          <div class="absolute inset-0 flex items-end p-6 bg-gradient-to-t from-fd-black/80 to-transparent z-10">
+            <div>
+              <p class="font-display text-2xl uppercase text-fd-cream group-hover:text-fd-red transition-colors">Fitness</p>
+              <p class="font-body text-xs tracking-widest uppercase text-fd-cream/50 mt-1">Physique · Campaign</p>
+            </div>
+          </div>
+          <div class="absolute inset-0 bg-fd-cream/0 group-hover:bg-fd-cream/5 transition-all duration-500 group-hover:scale-105"></div>
+          <div class="absolute inset-0 flex items-center justify-center text-fd-cream/10 font-body text-xs tracking-widest uppercase pointer-events-none">
+            /images/fitness/
+          </div>
+        </a>
+        <!-- Editorial -->
+        <a href="/portfolio#editorial" class="group relative aspect-[2/3] bg-fd-gray overflow-hidden block">
+          <div class="absolute inset-0 flex items-end p-6 bg-gradient-to-t from-fd-black/80 to-transparent z-10">
+            <div>
+              <p class="font-display text-2xl uppercase text-fd-cream group-hover:text-fd-red transition-colors">Editorial</p>
+              <p class="font-body text-xs tracking-widest uppercase text-fd-cream/50 mt-1">Fashion · Print</p>
+            </div>
+          </div>
+          <div class="absolute inset-0 bg-fd-cream/0 group-hover:bg-fd-cream/5 transition-all duration-500 group-hover:scale-105"></div>
+          <div class="absolute inset-0 flex items-center justify-center text-fd-cream/10 font-body text-xs tracking-widest uppercase pointer-events-none">
+            /images/editorial/
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK LINKS: DIGITALS + BOOKING -->
+  <section class="py-16 px-6 border-t border-fd-cream/10">
+    <div class="max-w-screen-xl mx-auto flex flex-col md:flex-row gap-4">
+      <a href="/digitals" class="flex-1 border border-fd-cream/20 p-8 hover:border-fd-red group transition-colors">
+        <p class="font-display text-3xl uppercase text-fd-cream group-hover:text-fd-red transition-colors mb-2">Digitals</p>
+        <p class="font-body text-xs tracking-widest uppercase text-fd-cream/40">For Casting Directors</p>
+      </a>
+      <a href="/stats" class="flex-1 border border-fd-cream/20 p-8 hover:border-fd-red group transition-colors">
+        <p class="font-display text-3xl uppercase text-fd-cream group-hover:text-fd-red transition-colors mb-2">Stats</p>
+        <p class="font-body text-xs tracking-widest uppercase text-fd-cream/40">Measurements &amp; Details</p>
+      </a>
+      <a href="/reel" class="flex-1 border border-fd-cream/20 p-8 hover:border-fd-red group transition-colors">
+        <p class="font-display text-3xl uppercase text-fd-cream group-hover:text-fd-red transition-colors mb-2">Reel</p>
+        <p class="font-body text-xs tracking-widest uppercase text-fd-cream/40">Movement &amp; Dance</p>
+      </a>
+      <a href="/contact" class="flex-1 bg-fd-red p-8 hover:bg-fd-cream group transition-colors">
+        <p class="font-display text-3xl uppercase text-fd-cream group-hover:text-fd-black transition-colors mb-2">Book</p>
+        <p class="font-body text-xs tracking-widest uppercase text-fd-cream/80 group-hover:text-fd-black/60 transition-colors">Get in Touch</p>
+      </a>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // GSAP hero animation — runs after GSAP loads
+  function initHeroAnimation() {
+    if (typeof (window as any).gsap === 'undefined') {
+      // Fallback: just make everything visible
+      document.querySelectorAll('[data-gsap]').forEach(el => {
+        (el as HTMLElement).style.opacity = '1';
+      });
+      return;
+    }
+
+    const gsap = (window as any).gsap;
+    const ScrollTrigger = (window as any).ScrollTrigger;
+
+    if (ScrollTrigger) {
+      gsap.registerPlugin(ScrollTrigger);
+    }
+
+    const lines = document.querySelectorAll('[data-gsap="hero-line"]');
+    const sub = document.querySelector('[data-gsap="hero-sub"]');
+
+    gsap.fromTo(lines,
+      { y: 60, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1, stagger: 0.15, ease: 'power3.out', delay: 0.2 }
+    );
+
+    if (sub) {
+      gsap.fromTo(sub,
+        { y: 20, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, ease: 'power2.out', delay: 0.7 }
+      );
+    }
+
+    // Scroll-triggered reveals for sections
+    if (ScrollTrigger) {
+      document.querySelectorAll('[data-gsap-section]').forEach(section => {
+        gsap.fromTo(section,
+          { opacity: 0, y: 40 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.9,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: section,
+              start: 'top 80%',
+            }
+          }
+        );
+      });
+    }
+  }
+
+  // Wait for GSAP CDN scripts to load
+  window.addEventListener('load', initHeroAnimation);
+</script>

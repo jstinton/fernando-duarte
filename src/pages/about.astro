@@ -1,0 +1,114 @@
+---
+import Layout from '../layouts/Layout.astro';
+import site from '../content/site.json';
+
+const cv = site.danceCV;
+---
+
+<Layout title="About — Fernando Duarte" description="Artist bio and dance CV for Fernando Duarte.">
+  <div class="pt-32 pb-24 px-6">
+    <div class="max-w-screen-xl mx-auto">
+      <h1 class="font-display text-[clamp(3rem,10vw,10rem)] leading-none uppercase text-fd-cream mb-24">
+        About
+      </h1>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
+        <!-- Bio -->
+        <div>
+          <p class="font-body text-xs tracking-[0.35em] uppercase text-fd-red mb-6">Artist Statement</p>
+          <div class="font-body text-fd-cream/80 leading-relaxed text-base space-y-4">
+            {site.bio.split('\n\n').map(para => (
+              <p>{para}</p>
+            ))}
+          </div>
+
+          <!-- Portrait placeholder -->
+          <div class="mt-12 aspect-[3/4] bg-fd-gray border border-fd-cream/5 flex items-center justify-center max-w-sm">
+            <p class="font-body text-xs text-fd-cream/20 tracking-widest uppercase text-center px-8">
+              Add portrait to<br />/images/hero/portrait.jpg
+            </p>
+          </div>
+        </div>
+
+        <!-- Dance CV -->
+        <div class="space-y-12">
+          <p class="font-body text-xs tracking-[0.35em] uppercase text-fd-red">Dance CV</p>
+
+          {cv.training && cv.training.length > 0 && (
+            <div>
+              <h2 class="font-display text-xl uppercase text-fd-cream mb-4 tracking-wide">Training</h2>
+              <ul class="space-y-2">
+                {cv.training.map(item => (
+                  <li class="font-body text-sm text-fd-cream/60 border-l border-fd-cream/10 pl-4">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {cv.companies && cv.companies.length > 0 && (
+            <div>
+              <h2 class="font-display text-xl uppercase text-fd-cream mb-4 tracking-wide">Companies</h2>
+              <ul class="space-y-2">
+                {cv.companies.map(item => (
+                  <li class="font-body text-sm text-fd-cream/60 border-l border-fd-cream/10 pl-4">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {cv.repertoire && cv.repertoire.length > 0 && (
+            <div>
+              <h2 class="font-display text-xl uppercase text-fd-cream mb-4 tracking-wide">Repertoire</h2>
+              <ul class="space-y-2">
+                {cv.repertoire.map(item => (
+                  <li class="font-body text-sm text-fd-cream/60 border-l border-fd-cream/10 pl-4">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {cv.choreographers && cv.choreographers.length > 0 && (
+            <div>
+              <h2 class="font-display text-xl uppercase text-fd-cream mb-4 tracking-wide">Choreographers</h2>
+              <ul class="space-y-2">
+                {cv.choreographers.map(item => (
+                  <li class="font-body text-sm text-fd-cream/60 border-l border-fd-cream/10 pl-4">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {cv.notablePerformances && cv.notablePerformances.length > 0 && (
+            <div>
+              <h2 class="font-display text-xl uppercase text-fd-cream mb-4 tracking-wide">Notable Performances</h2>
+              <ul class="space-y-2">
+                {cv.notablePerformances.map(item => (
+                  <li class="font-body text-sm text-fd-cream/60 border-l border-fd-cream/10 pl-4">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <div class="pt-8 border-t border-fd-cream/10 flex gap-4">
+            <a href="/portfolio" class="inline-block font-body text-xs tracking-[0.2em] uppercase border border-fd-cream/30 text-fd-cream px-6 py-3 hover:border-fd-red hover:text-fd-red transition-colors">
+              View Portfolio
+            </a>
+            <a href="/contact" class="inline-block font-body text-xs tracking-[0.2em] uppercase bg-fd-red text-fd-cream px-6 py-3 hover:bg-fd-cream hover:text-fd-black transition-colors">
+              Book Fernando
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

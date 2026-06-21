@@ -1,0 +1,112 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Lightbox from '../components/Lightbox.astro';
+import dance from '../content/gallery/dance.json';
+import fitness from '../content/gallery/fitness.json';
+import editorial from '../content/gallery/editorial.json';
+
+const categories = [
+  { id: 'dance', label: 'Dance / Performance', items: dance },
+  { id: 'fitness', label: 'Fitness / Physique', items: fitness },
+  { id: 'editorial', label: 'Editorial / Fashion', items: editorial },
+];
+
+// Detect if a category has real images (src does not end with /)
+function hasRealImages(items: { src: string }[]) {
+  return items.some(item => !item.src.endsWith('/'));
+}
+---
+
+<Layout title="Portfolio — Fernando Duarte" description="Photography portfolio of Fernando Duarte — dance, fitness, and editorial work.">
+  <div class="pt-32 pb-24 px-6">
+    <div class="max-w-screen-xl mx-auto">
+      <h1 class="font-display text-[clamp(3rem,10vw,10rem)] leading-none uppercase text-fd-cream mb-16">
+        Portfolio
+      </h1>
+
+      <!-- Category tabs -->
+      <div class="flex gap-0 border-b border-fd-cream/10 mb-16 overflow-x-auto" id="tabs">
+        {categories.map((cat, i) => (
+          <button
+            class={`tab-btn font-body text-xs tracking-[0.2em] uppercase px-6 py-4 whitespace-nowrap transition-colors border-b-2 ${i === 0 ? 'border-fd-red text-fd-cream' : 'border-transparent text-fd-cream/40 hover:text-fd-cream'}`}
+            data-tab={cat.id}
+          >
+            {cat.label}
+          </button>
+        ))}
+      </div>
+
+      <!-- Gallery panels -->
+      {categories.map((cat, i) => (
+        <div id={cat.id} class={`tab-panel ${i !== 0 ? 'hidden' : ''}`}>
+          {!hasRealImages(cat.items) ? (
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+              {Array.from({ length: 6 }).map((_, idx) => (
+                <div class="aspect-[2/3] bg-fd-gray border border-fd-cream/5 flex items-center justify-center">
+                  <p class="font-body text-xs text-fd-cream/20 tracking-widest uppercase text-center px-4">
+                    Add images to<br />/images/{cat.id}/
+                  </p>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3" id={`gallery-${cat.id}`}>
+              {cat.items.map((item, idx) => (
+                <button
+                  class="gallery-item group relative aspect-[2/3] bg-fd-gray overflow-hidden block w-full"
+                  data-lightbox={JSON.stringify(item)}
+                  data-index={String(idx)}
+                  data-category={cat.id}
+                >
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    loading={idx < 4 ? 'eager' : 'lazy'}
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div class="absolute inset-0 bg-fd-black/0 group-hover:bg-fd-black/30 transition-colors duration-300 flex items-end p-4 opacity-0 group-hover:opacity-100">
+                    <p class="font-body text-xs text-fd-cream tracking-widest uppercase">{item.credit}</p>
+                  </div>
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <Lightbox />
+</Layout>
+
+<script>
+  // Tab switching
+  const tabs = document.querySelectorAll<HTMLElement>('.tab-btn');
+  const panels = document.querySelectorAll<HTMLElement>('.tab-panel');
+
+  function activateTab(targetId: string) {
+    tabs.forEach(t => {
+      const isActive = t.getAttribute('data-tab') === targetId;
+      t.classList.toggle('border-fd-red', isActive);
+      t.classList.toggle('border-transparent', !isActive);
+      t.classList.toggle('text-fd-cream', isActive);
+      t.classList.toggle('text-fd-cream/40', !isActive);
+    });
+    panels.forEach(p => {
+      p.classList.toggle('hidden', p.id !== targetId);
+    });
+  }
+
+  tabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.getAttribute('data-tab');
+      if (target) activateTab(target);
+    });
+  });
+
+  // Handle URL hash for deep linking
+  const hash = window.location.hash.replace('#', '');
+  if (hash && ['dance', 'fitness', 'editorial'].includes(hash)) {
+    activateTab(hash);
+  }
+</script>

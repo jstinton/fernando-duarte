@@ -1,0 +1,26 @@
+[
+  {
+    "id": "digitals-full",
+    "src": "/images/digitals/",
+    "alt": "Fernando Duarte — full body, natural light",
+    "label": "Full Body"
+  },
+  {
+    "id": "digitals-waist",
+    "src": "/images/digitals/",
+    "alt": "Fernando Duarte — waist up, natural light",
+    "label": "Waist Up"
+  },
+  {
+    "id": "digitals-profile",
+    "src": "/images/digitals/",
+    "alt": "Fernando Duarte — profile, natural light",
+    "label": "Profile"
+  },
+  {
+    "id": "digitals-headshot",
+    "src": "/images/digitals/",
+    "alt": "Fernando Duarte — headshot, natural light",
+    "label": "Headshot"
+  }
+]

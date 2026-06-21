@@ -1,0 +1,51 @@
+{
+  "name": "Fernando Duarte",
+  "tagline": "Dancer · Model · Artist",
+  "pronouns": "they/them",
+  "bio": "Fernando Duarte is a professional ballet dancer and physique model based in [CITY]. Their work spans classical performance, contemporary dance, and high-fashion editorial. Trained at [TRAINING INSTITUTION], Fernando brings an artist's precision and a model's command to every project — whether on stage, in studio, or on set.\n\nThey are represented by [AGENCY NAME] and are available for performance engagements, editorial shoots, fitness campaigns, and brand partnerships.",
+  "stats": {
+    "Height": "[HEIGHT]",
+    "Chest": "[CHEST]",
+    "Waist": "[WAIST]",
+    "Hips": "[HIPS]",
+    "Inseam": "[INSEAM]",
+    "Shoe": "[SHOE SIZE]",
+    "Hair": "[HAIR COLOR]",
+    "Eyes": "[EYE COLOR]",
+    "Pronouns": "they/them"
+  },
+  "danceCV": {
+    "training": [
+      "[TRAINING INSTITUTION 1] — [YEARS]",
+      "[TRAINING INSTITUTION 2] — [YEARS]"
+    ],
+    "companies": [
+      "[DANCE COMPANY 1] — [YEARS]",
+      "[DANCE COMPANY 2] — [YEARS]"
+    ],
+    "repertoire": [
+      "[ROLE] in [WORK] — [CHOREOGRAPHER]",
+      "[ROLE] in [WORK] — [CHOREOGRAPHER]"
+    ],
+    "choreographers": [
+      "[CHOREOGRAPHER NAME]",
+      "[CHOREOGRAPHER NAME]"
+    ],
+    "notablePerformances": [
+      "[PERFORMANCE / VENUE / YEAR]",
+      "[PERFORMANCE / VENUE / YEAR]"
+    ]
+  },
+  "contact": {
+    "email": "[EMAIL@DOMAIN.COM]",
+    "instagram": "@[HANDLE]",
+    "agency": "[AGENCY NAME]",
+    "agencyEmail": "[AGENCY EMAIL]"
+  },
+  "featured": {
+    "title": "Nigel Barker × Fernando Duarte",
+    "photographer": "Nigel Barker",
+    "description": "An editorial collaboration with acclaimed photographer and America's Next Top Model judge Nigel Barker.",
+    "images": []
+  }
+}
