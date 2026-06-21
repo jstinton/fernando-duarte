@@ -10,36 +10,20 @@ import Layout from '../layouts/Layout.astro';
       </h1>
       <p class="font-body text-black/40 text-sm tracking-widest uppercase mb-16">Dance Reel &amp; Performance Film</p>
 
-      <!-- Primary reel slot -->
-      <div class="w-full aspect-video bg-black/5 mb-6 flex items-center justify-center relative overflow-hidden border border-black/10">
-        <!--
-          TO ADD YOUR REEL — replace this div with:
-          <video src="/video/reel-main.mp4" controls poster="/images/hero/reel-poster.jpg" class="w-full h-full object-cover">
-            Your browser does not support the video tag.
-          </video>
-        -->
-        <div class="text-center px-8">
-          <p class="font-display text-4xl font-black text-black/10 mb-4">Reel</p>
-          <p class="font-body text-xs text-black/20 tracking-widest uppercase">Add video to /public/video/reel-main.mp4</p>
-          <p class="font-body text-xs text-black/20 tracking-widest uppercase mt-2">Then replace this placeholder with a &lt;video&gt; element</p>
-        </div>
+      <!-- Primary reel -->
+      <div class="w-full aspect-video mb-6 overflow-hidden border border-black/10">
+        <iframe
+          src="https://www.youtube.com/embed/zXm2bVko10c"
+          title="Fernando Duarte — Dance Reel"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          class="w-full h-full"
+        ></iframe>
       </div>
 
       <p class="font-body text-[11px] text-black/30 tracking-[0.2em] uppercase mb-24">
-        Primary Reel — HD · Replace with /video/reel-main.mp4
+        Dance Reel — Fernando Duarte
       </p>
-
-      <h2 class="font-display text-2xl font-black text-black mb-8">Additional Clips</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="aspect-video bg-black/5 flex flex-col items-center justify-center gap-3 border border-black/10">
-          <p class="font-display text-xl font-black text-black/10">Clip 02</p>
-          <p class="font-body text-xs text-black/20 tracking-widest uppercase text-center px-8">/video/clip-02.mp4</p>
-        </div>
-        <div class="aspect-video bg-black/5 flex flex-col items-center justify-center gap-3 border border-black/10">
-          <p class="font-display text-xl font-black text-black/10">Clip 03</p>
-          <p class="font-body text-xs text-black/20 tracking-widest uppercase text-center px-8">/video/clip-03.mp4</p>
-        </div>
-      </div>
 
       <div class="mt-16 text-center">
         <a href="/contact" class="inline-block font-body text-[11px] tracking-[0.25em] uppercase bg-black text-white px-8 py-4 hover:bg-black/70 transition-colors">
