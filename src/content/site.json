@@ -2,7 +2,7 @@
   "name": "Fernando Duarte",
   "tagline": "Dancer · Model · Artist",
   "pronouns": "they/them",
-  "bio": "Fe Duarte is a Brazil-born, Chicago-based model with a 5'8\" frame and range across editorial, catwalk, commercial, swimwear, theater and film. Currently building a portfolio and open to bookings with photographers, designers, and brands.",
+  "bio": "Fernando Duarte grew up in Rio de Janeiro, Brazil, and received their training at the Escola Estadual de Danças Maria Olenewa. In 2008, they were awarded a full scholarship to train at The Harid Conservatory in Boca Raton, FL. With the guidance of the teachers at Harid, and Franco De Vita and Raymond Lukens at the Jacqueline Kennedy Onassis School in New York, they were offered a traineeship with the Joffrey Academy of Dance, Official School of The Joffrey Ballet, where they danced lead roles in ballets such as Cinderella, Coppélia and contemporary works by former Academy Artistic Director Alexei Kremnev.\n\nSince joining The Joffrey Ballet, Duarte has danced many roles in the Joffrey's extensive repertory such as Lar Lubovich's Othello, Yuri Possokov's Don Quixote, Krzysztof Pastor's Romeo & Juliet, Val Caniparoli's Incantations, and Justin Peck's In Creases.\n\nDuarte received the Jeannot B. Cerrone Award for excellence in dance performance, an award given to the students who most improve during an academic year at The Harid Conservatory.",
   "stats": {
     "Height": "5' 8\"",
     "Chest": "33",
@@ -15,24 +15,33 @@
   },
   "danceCV": {
     "training": [
-      "[TRAINING INSTITUTION 1] — [YEARS]",
-      "[TRAINING INSTITUTION 2] — [YEARS]"
+      "Escola Estadual de Danças Maria Olenewa — Rio de Janeiro, Brazil",
+      "The Harid Conservatory — Boca Raton, FL (Full Scholarship, 2008)",
+      "Jacqueline Kennedy Onassis School, New York — Franco De Vita & Raymond Lukens",
+      "Joffrey Academy of Dance, Official School of The Joffrey Ballet"
     ],
     "companies": [
-      "[DANCE COMPANY 1] — [YEARS]",
-      "[DANCE COMPANY 2] — [YEARS]"
+      "The Joffrey Ballet — Company Artist, 2013–present"
     ],
     "repertoire": [
-      "[ROLE] in [WORK] — [CHOREOGRAPHER]",
-      "[ROLE] in [WORK] — [CHOREOGRAPHER]"
+      "Othello — Lar Lubovich",
+      "Don Quixote — Yuri Possokov",
+      "Romeo & Juliet — Krzysztof Pastor",
+      "Incantations — Val Caniparoli",
+      "In Creases — Justin Peck",
+      "Cinderella — Joffrey Academy",
+      "Coppélia — Joffrey Academy"
     ],
     "choreographers": [
-      "[CHOREOGRAPHER NAME]",
-      "[CHOREOGRAPHER NAME]"
+      "Lar Lubovich",
+      "Yuri Possokov",
+      "Krzysztof Pastor",
+      "Val Caniparoli",
+      "Justin Peck",
+      "Alexei Kremnev"
     ],
     "notablePerformances": [
-      "[PERFORMANCE / VENUE / YEAR]",
-      "[PERFORMANCE / VENUE / YEAR]"
+      "Jeannot B. Cerrone Award for Excellence in Dance Performance — The Harid Conservatory"
     ]
   },
   "contact": {
