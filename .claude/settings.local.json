@@ -8,7 +8,9 @@
       "Bash(ls /usr/local/bin/node /opt/homebrew/bin/node ~/.nvm/versions/node/*/bin/node)",
       "Bash(command -v node)",
       "Bash(gh auth:*)",
-      "Bash(git --version)"
+      "Bash(git --version)",
+      "Bash(\"/Users/josephstinton/Documents/Claude/Projects/F Duarte/public/CNAME\")",
+      "Bash(grep -r \"import \" src/pages/*.astro src/components/*.astro src/layouts/*.astro)"
     ]
   }
 }
