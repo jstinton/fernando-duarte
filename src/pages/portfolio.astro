@@ -116,7 +116,7 @@ function hasRealImages(items: { src: string }[]) {
   });
 
   const hash = window.location.hash.replace('#', '');
-  if (hash && ['dance', 'fitness', 'editorial'].includes(hash)) activateTab(hash);
+  if (hash && ['dance', 'fitness', 'editorial', 'gender-undefined'].includes(hash)) activateTab(hash);
 
   // Lightbox
   const lightbox = document.getElementById('lightbox');
