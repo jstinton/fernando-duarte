@@ -12,7 +12,7 @@ export default {
         'fd-off': '#F7F7F7',
       },
       fontFamily: {
-        display: ["'Playfair Display'", 'Georgia', 'serif'],
+        display: ["'GFS Didot'", "'Didot'", "'Bodoni MT'", 'Georgia', 'serif'],
         body: ["'DM Sans'", 'system-ui', 'sans-serif'],
       },
     },
