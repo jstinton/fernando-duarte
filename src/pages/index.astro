@@ -5,35 +5,29 @@ import site from '../content/site.json';
 
 <Layout title="Fernando Duarte — Dancer & Model">
   <!-- HERO -->
-  <section class="relative min-h-screen flex flex-col bg-white overflow-hidden">
-
-    <!-- Spacer for nav -->
-    <div class="h-24 md:h-28 flex-shrink-0"></div>
-
-    <!-- Name — scales to fit viewport width -->
-    <div class="relative z-10 px-4 md:px-10 flex-1 flex flex-col justify-center">
-      <p class="font-body text-[10px] tracking-[0.4em] uppercase text-black/40 mb-6 opacity-0" data-gsap="hero-sub">
-        Dancer &nbsp;·&nbsp; Model &nbsp;·&nbsp; Artist
-      </p>
-      <h1 class="font-display leading-[0.88]" id="hero-name">
-        <span class="block text-[12vw] md:text-[7vw] lg:text-[6rem] text-black opacity-0" data-gsap="hero-line">Fernando</span>
-        <span class="block text-[12vw] md:text-[7vw] lg:text-[6rem] text-black opacity-0" data-gsap="hero-line">Duarte</span>
-      </h1>
-    </div>
-
-    <!-- CTAs -->
-    <div class="relative z-10 px-4 md:px-10 pb-12 flex flex-wrap gap-4 opacity-0" data-gsap="hero-sub">
-      <a href="/portfolio" class="inline-block font-body text-[11px] tracking-[0.25em] uppercase bg-black text-white px-6 py-3 hover:bg-black/70 transition-colors">
-        View Work
-      </a>
-      <a href="/contact" class="inline-block font-body text-[11px] tracking-[0.25em] uppercase border border-black text-black px-6 py-3 hover:bg-black hover:text-white transition-colors">
-        Book Now
-      </a>
-    </div>
+  <section class="relative min-h-screen flex flex-col justify-end bg-white overflow-hidden pt-24">
 
     <!-- To add a hero image: place at /public/images/hero/hero-main.jpg then add:
          <img src="/images/hero/hero-main.jpg" alt="Fernando Duarte" class="absolute inset-0 w-full h-full object-cover grayscale opacity-15" />
     -->
+
+    <div class="relative z-10 px-4 md:px-10 pb-10">
+      <p class="font-body text-[10px] tracking-[0.4em] uppercase text-black/40 mb-4 opacity-0" data-gsap="hero-sub">
+        Dancer &nbsp;·&nbsp; Model &nbsp;·&nbsp; Artist
+      </p>
+      <h1 class="font-display leading-[0.88] mb-8" id="hero-name">
+        <span class="block text-[12vw] md:text-[8vw] lg:text-[7rem] text-black opacity-0" data-gsap="hero-line">Fernando</span>
+        <span class="block text-[12vw] md:text-[8vw] lg:text-[7rem] text-black opacity-0" data-gsap="hero-line">Duarte</span>
+      </h1>
+      <div class="flex flex-wrap gap-4 opacity-0" data-gsap="hero-sub">
+        <a href="/portfolio" class="inline-block font-body text-[11px] tracking-[0.25em] uppercase bg-black text-white px-6 py-3 hover:bg-black/70 transition-colors">
+          View Work
+        </a>
+        <a href="/contact" class="inline-block font-body text-[11px] tracking-[0.25em] uppercase border border-black text-black px-6 py-3 hover:bg-black hover:text-white transition-colors">
+          Book Now
+        </a>
+      </div>
+    </div>
   </section>
 
   <!-- FEATURED: NIGEL BARKER -->
