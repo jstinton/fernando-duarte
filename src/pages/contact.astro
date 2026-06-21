@@ -9,50 +9,44 @@ const hasAgencyEmail = site.contact.agencyEmail && !site.contact.agencyEmail.sta
 <Layout title="Contact — Fernando Duarte" description="Book Fernando Duarte for dance, editorial, fitness, or brand work.">
   <div class="pt-32 pb-24 px-6">
     <div class="max-w-screen-xl mx-auto">
-      <h1 class="font-display text-[clamp(3rem,10vw,10rem)] leading-none uppercase text-fd-cream mb-6">
+      <h1 class="font-display text-[clamp(3rem,10vw,10rem)] leading-none font-black text-black mb-6">
         Book
       </h1>
-      <p class="font-body text-fd-cream/50 text-sm tracking-widest uppercase mb-24">
+      <p class="font-body text-black/40 text-sm tracking-widest uppercase mb-24">
         For inquiries, bookings &amp; collaborations
       </p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
-        <!-- Direct contact info -->
         <div class="space-y-12">
           <div>
-            <p class="font-body text-xs tracking-[0.35em] uppercase text-fd-red mb-4">Direct</p>
-            <a href={`mailto:${site.contact.email}`} class="font-display text-2xl md:text-3xl uppercase text-fd-cream hover:text-fd-red transition-colors block mb-3 break-all">
+            <p class="font-body text-[11px] tracking-[0.35em] uppercase text-black/30 mb-4">Direct</p>
+            <a href={`mailto:${site.contact.email}`} class="font-display text-2xl md:text-3xl font-black text-black hover:opacity-50 transition-opacity block mb-3 break-all">
               {site.contact.email}
             </a>
-            <a
-              href={`https://instagram.com/${site.contact.instagram.replace('@', '')}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="font-body text-sm text-fd-cream/50 tracking-widest uppercase hover:text-fd-red transition-colors block"
-            >
+            <a href={`https://instagram.com/${site.contact.instagram.replace('@', '')}`} target="_blank" rel="noopener noreferrer"
+              class="font-body text-sm text-black/40 tracking-widest uppercase hover:text-black transition-colors block">
               {site.contact.instagram}
             </a>
           </div>
 
           {hasAgency && (
             <div>
-              <p class="font-body text-xs tracking-[0.35em] uppercase text-fd-red mb-4">Representation</p>
-              <p class="font-display text-xl uppercase text-fd-cream mb-2">{site.contact.agency}</p>
+              <p class="font-body text-[11px] tracking-[0.35em] uppercase text-black/30 mb-4">Representation</p>
+              <p class="font-display text-xl font-black text-black mb-2">{site.contact.agency}</p>
               {hasAgencyEmail && (
-                <a href={`mailto:${site.contact.agencyEmail}`} class="font-body text-sm text-fd-cream/50 hover:text-fd-red transition-colors">
+                <a href={`mailto:${site.contact.agencyEmail}`} class="font-body text-sm text-black/40 hover:text-black transition-colors">
                   {site.contact.agencyEmail}
                 </a>
               )}
             </div>
           )}
 
-          <!-- Availability types -->
           <div>
-            <p class="font-body text-xs tracking-[0.35em] uppercase text-fd-red mb-4">Available For</p>
+            <p class="font-body text-[11px] tracking-[0.35em] uppercase text-black/30 mb-4">Available For</p>
             <ul class="space-y-2">
               {['Dance / Performance', 'Editorial / Fashion', 'Fitness / Campaign', 'Brand Partnerships', 'Workshops & Masterclasses'].map(item => (
-                <li class="font-body text-sm text-fd-cream/60 flex items-center gap-3">
-                  <span class="w-1 h-1 bg-fd-red inline-block flex-shrink-0"></span>
+                <li class="font-body text-sm text-black/60 flex items-center gap-3">
+                  <span class="w-1 h-1 bg-black inline-block flex-shrink-0"></span>
                   {item}
                 </li>
               ))}
@@ -60,45 +54,25 @@ const hasAgencyEmail = site.contact.agencyEmail && !site.contact.agencyEmail.sta
           </div>
         </div>
 
-        <!-- Contact form via Formspree -->
         <div>
-          <p class="font-body text-xs tracking-[0.35em] uppercase text-fd-red mb-6">Send a message</p>
-          <!--
-            SETUP: Sign up at https://formspree.io — it's free for basic use.
-            Replace YOUR_FORMSPREE_ID below with your actual form ID (e.g. xpzgkdqr).
-          -->
+          <p class="font-body text-[11px] tracking-[0.35em] uppercase text-black/30 mb-6">Send a message</p>
           <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="space-y-5" id="contact-form">
             <div>
-              <label for="name" class="font-body text-xs tracking-widest uppercase text-fd-cream/50 block mb-2">Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                autocomplete="name"
-                class="w-full bg-transparent border border-fd-cream/20 text-fd-cream font-body text-sm px-4 py-3 focus:outline-none focus:border-fd-red transition-colors placeholder:text-fd-cream/20"
-                placeholder="Your name"
-              />
+              <label for="name" class="font-body text-[11px] tracking-widest uppercase text-black/40 block mb-2">Name</label>
+              <input type="text" id="name" name="name" required autocomplete="name"
+                class="w-full bg-transparent border border-black/20 text-black font-body text-sm px-4 py-3 focus:outline-none focus:border-black transition-colors placeholder:text-black/20"
+                placeholder="Your name" />
             </div>
             <div>
-              <label for="email" class="font-body text-xs tracking-widest uppercase text-fd-cream/50 block mb-2">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                autocomplete="email"
-                class="w-full bg-transparent border border-fd-cream/20 text-fd-cream font-body text-sm px-4 py-3 focus:outline-none focus:border-fd-red transition-colors placeholder:text-fd-cream/20"
-                placeholder="your@email.com"
-              />
+              <label for="email" class="font-body text-[11px] tracking-widest uppercase text-black/40 block mb-2">Email</label>
+              <input type="email" id="email" name="email" required autocomplete="email"
+                class="w-full bg-transparent border border-black/20 text-black font-body text-sm px-4 py-3 focus:outline-none focus:border-black transition-colors placeholder:text-black/20"
+                placeholder="your@email.com" />
             </div>
             <div>
-              <label for="type" class="font-body text-xs tracking-widest uppercase text-fd-cream/50 block mb-2">Type of Work</label>
-              <select
-                id="type"
-                name="type"
-                class="w-full bg-fd-black border border-fd-cream/20 text-fd-cream font-body text-sm px-4 py-3 focus:outline-none focus:border-fd-red transition-colors"
-              >
+              <label for="type" class="font-body text-[11px] tracking-widest uppercase text-black/40 block mb-2">Type of Work</label>
+              <select id="type" name="type"
+                class="w-full bg-white border border-black/20 text-black font-body text-sm px-4 py-3 focus:outline-none focus:border-black transition-colors">
                 <option value="">Select...</option>
                 <option value="dance">Dance / Performance</option>
                 <option value="editorial">Editorial / Fashion</option>
@@ -109,31 +83,23 @@ const hasAgencyEmail = site.contact.agencyEmail && !site.contact.agencyEmail.sta
               </select>
             </div>
             <div>
-              <label for="message" class="font-body text-xs tracking-widest uppercase text-fd-cream/50 block mb-2">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="5"
-                required
-                class="w-full bg-transparent border border-fd-cream/20 text-fd-cream font-body text-sm px-4 py-3 focus:outline-none focus:border-fd-red transition-colors resize-none placeholder:text-fd-cream/20"
-                placeholder="Tell Fernando about your project..."
-              ></textarea>
+              <label for="message" class="font-body text-[11px] tracking-widest uppercase text-black/40 block mb-2">Message</label>
+              <textarea id="message" name="message" rows="5" required
+                class="w-full bg-transparent border border-black/20 text-black font-body text-sm px-4 py-3 focus:outline-none focus:border-black transition-colors resize-none placeholder:text-black/20"
+                placeholder="Tell Fernando about your project..."></textarea>
             </div>
-            <button
-              type="submit"
-              class="w-full font-body text-xs tracking-[0.2em] uppercase bg-fd-red text-fd-cream py-4 hover:bg-fd-cream hover:text-fd-black transition-colors"
-            >
+            <button type="submit"
+              class="w-full font-body text-[11px] tracking-[0.25em] uppercase bg-black text-white py-4 hover:bg-black/70 transition-colors">
               Send Message
             </button>
           </form>
 
-          <!-- Success / error states -->
-          <div id="form-success" class="hidden mt-6 p-4 border border-fd-cream/20 text-center">
-            <p class="font-display text-xl uppercase text-fd-cream mb-1">Message Sent</p>
-            <p class="font-body text-xs text-fd-cream/50 tracking-widest uppercase">Fernando will be in touch soon.</p>
+          <div id="form-success" class="hidden mt-6 p-4 border border-black/10 text-center">
+            <p class="font-display text-xl font-black text-black mb-1">Message Sent</p>
+            <p class="font-body text-xs text-black/40 tracking-widest uppercase">Fernando will be in touch soon.</p>
           </div>
-          <div id="form-error" class="hidden mt-6 p-4 border border-fd-red/30 text-center">
-            <p class="font-body text-xs text-fd-red tracking-widest uppercase">Something went wrong — please try emailing directly.</p>
+          <div id="form-error" class="hidden mt-6 p-4 border border-black/20 text-center">
+            <p class="font-body text-xs text-black/60 tracking-widest uppercase">Something went wrong — please email directly.</p>
           </div>
         </div>
       </div>
@@ -149,22 +115,10 @@ const hasAgencyEmail = site.contact.agencyEmail && !site.contact.agencyEmail.sta
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const data = new FormData(form);
-
     try {
-      const res = await fetch(form.action, {
-        method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
-      });
-
-      if (res.ok) {
-        form.classList.add('hidden');
-        successMsg?.classList.remove('hidden');
-      } else {
-        errorMsg?.classList.remove('hidden');
-      }
-    } catch {
-      errorMsg?.classList.remove('hidden');
-    }
+      const res = await fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
+      if (res.ok) { form.classList.add('hidden'); successMsg?.classList.remove('hidden'); }
+      else { errorMsg?.classList.remove('hidden'); }
+    } catch { errorMsg?.classList.remove('hidden'); }
   });
 </script>

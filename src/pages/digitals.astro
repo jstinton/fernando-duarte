@@ -5,11 +5,10 @@ import digitals from '../content/gallery/digitals.json';
 
 <Layout title="Digitals — Fernando Duarte" description="Casting digitals for Fernando Duarte — unretouched, natural light.">
   <div class="pt-32 pb-24">
-    <!-- Clean cream header band -->
-    <div class="bg-fd-cream text-fd-black px-6 py-12 mb-16">
+    <div class="border-b border-black/10 px-6 py-12 mb-16">
       <div class="max-w-screen-xl mx-auto flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-        <h1 class="font-display text-[clamp(3rem,8vw,8rem)] leading-none uppercase">Digitals</h1>
-        <div class="font-body text-sm text-fd-black/60 max-w-xs">
+        <h1 class="font-display text-[clamp(3rem,8vw,8rem)] leading-none font-black text-black">Digitals</h1>
+        <div class="font-body text-sm text-black/50 max-w-xs">
           <p>Unretouched. Natural light. For casting and agency review.</p>
           <p class="mt-2 text-xs tracking-widest uppercase">Fernando Duarte · they/them</p>
         </div>
@@ -20,46 +19,40 @@ import digitals from '../content/gallery/digitals.json';
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
         {digitals.map((shot) => (
           <div class="flex flex-col gap-3">
-            <div class="aspect-[2/3] bg-fd-gray/40 border border-fd-cream/10 flex items-center justify-center relative overflow-hidden">
+            <div class="aspect-[2/3] bg-black/5 flex items-center justify-center relative overflow-hidden">
               {shot.src.endsWith('/') ? (
-                <div class="text-center px-4">
-                  <p class="font-body text-xs text-fd-cream/20 tracking-widest uppercase">
-                    Add image
-                  </p>
-                  <p class="font-body text-xs text-fd-cream/20 tracking-widest uppercase mt-1">
-                    /images/digitals/
-                  </p>
-                </div>
+                <p class="font-body text-xs text-black/20 tracking-widest uppercase text-center px-4">
+                  Add image<br />/images/digitals/
+                </p>
               ) : (
-                <img src={shot.src} alt={shot.alt} loading="lazy" class="w-full h-full object-cover" />
+                <img src={shot.src} alt={shot.alt} loading="lazy" class="w-full h-full object-cover grayscale" />
               )}
             </div>
-            <p class="font-body text-xs text-fd-cream/50 tracking-[0.2em] uppercase text-center">{shot.label}</p>
+            <p class="font-body text-[11px] text-black/40 tracking-[0.2em] uppercase text-center">{shot.label}</p>
           </div>
         ))}
       </div>
 
-      <!-- Stats summary strip -->
-      <div class="mt-16 py-8 border-t border-b border-fd-cream/10 flex flex-wrap gap-8 justify-center">
+      <div class="mt-16 py-8 border-t border-b border-black/10 flex flex-wrap gap-8 justify-center">
         <div class="text-center">
-          <p class="font-body text-xs tracking-[0.25em] uppercase text-fd-cream/30 mb-1">Pronouns</p>
-          <p class="font-display text-lg uppercase text-fd-cream">they/them</p>
+          <p class="font-body text-[11px] tracking-[0.25em] uppercase text-black/30 mb-1">Pronouns</p>
+          <p class="font-display text-lg font-black text-black">they/them</p>
         </div>
         <div class="text-center">
-          <p class="font-body text-xs tracking-[0.25em] uppercase text-fd-cream/30 mb-1">Discipline</p>
-          <p class="font-display text-lg uppercase text-fd-cream">Ballet · Contemporary</p>
+          <p class="font-body text-[11px] tracking-[0.25em] uppercase text-black/30 mb-1">Discipline</p>
+          <p class="font-display text-lg font-black text-black">Ballet · Contemporary</p>
         </div>
         <div class="text-center">
-          <p class="font-body text-xs tracking-[0.25em] uppercase text-fd-cream/30 mb-1">Available</p>
-          <p class="font-display text-lg uppercase text-fd-cream">Editorial · Campaign · Stage</p>
+          <p class="font-body text-[11px] tracking-[0.25em] uppercase text-black/30 mb-1">Available</p>
+          <p class="font-display text-lg font-black text-black">Editorial · Campaign · Stage</p>
         </div>
       </div>
 
       <div class="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/stats" class="inline-block font-body text-xs tracking-[0.2em] uppercase border border-fd-cream/30 text-fd-cream px-8 py-4 hover:border-fd-red hover:text-fd-red transition-colors text-center">
+        <a href="/stats" class="inline-block font-body text-[11px] tracking-[0.25em] uppercase border border-black text-black px-8 py-4 hover:bg-black hover:text-white transition-colors text-center">
           View Stats &amp; Measurements
         </a>
-        <a href="/contact" class="inline-block font-body text-xs tracking-[0.2em] uppercase bg-fd-red text-fd-cream px-8 py-4 hover:bg-fd-cream hover:text-fd-black transition-colors text-center">
+        <a href="/contact" class="inline-block font-body text-[11px] tracking-[0.25em] uppercase bg-black text-white px-8 py-4 hover:bg-black/70 transition-colors text-center">
           Book Fernando
         </a>
       </div>

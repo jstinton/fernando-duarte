@@ -4,15 +4,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        'fd-black': '#0A0A0A',
-        'fd-cream': '#F5F0E8',
-        'fd-red': '#C8102E',
-        'fd-gold': '#D4A827',
-        'fd-gray': '#1A1A1A',
+        'fd-black': '#FFFFFF',
+        'fd-cream': '#000000',
+        'fd-red': '#000000',
+        'fd-gold': '#555555',
+        'fd-gray': '#F0F0F0',
+        'fd-off': '#F7F7F7',
       },
       fontFamily: {
-        display: ['\'Anton\'', '\'Impact\'', 'sans-serif'],
-        body: ['\'DM Sans\'', 'system-ui', 'sans-serif'],
+        display: ["'Playfair Display'", 'Georgia', 'serif'],
+        body: ["'DM Sans'", 'system-ui', 'sans-serif'],
       },
     },
   },

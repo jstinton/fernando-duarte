@@ -12,9 +12,9 @@ const navLinks = [
 const currentPath = Astro.url.pathname;
 ---
 
-<header id="site-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 mix-blend-normal">
+<header id="site-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
   <div class="max-w-screen-xl mx-auto px-6 py-5 flex items-center justify-between">
-    <a href="/" class="font-display text-fd-cream text-xl tracking-[0.15em] uppercase hover:text-fd-red transition-colors">
+    <a href="/" class="font-display text-black text-xl italic tracking-wide hover:opacity-50 transition-opacity">
       Fernando Duarte
     </a>
 
@@ -23,7 +23,7 @@ const currentPath = Astro.url.pathname;
       {navLinks.map(link => (
         <a
           href={link.href}
-          class={`font-body text-xs tracking-[0.2em] uppercase transition-colors hover:text-fd-red ${currentPath === link.href ? 'text-fd-red' : 'text-fd-cream/80'}`}
+          class={`font-body text-[11px] tracking-[0.25em] uppercase transition-opacity hover:opacity-40 ${currentPath === link.href ? 'opacity-100' : 'opacity-60'}`}
         >
           {link.label}
         </a>
@@ -32,19 +32,19 @@ const currentPath = Astro.url.pathname;
 
     <!-- Mobile hamburger -->
     <button id="menu-toggle" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Toggle menu">
-      <span class="w-6 h-px bg-fd-cream block transition-all"></span>
-      <span class="w-6 h-px bg-fd-cream block transition-all"></span>
-      <span class="w-4 h-px bg-fd-cream block transition-all"></span>
+      <span class="w-6 h-px bg-black block transition-all"></span>
+      <span class="w-6 h-px bg-black block transition-all"></span>
+      <span class="w-4 h-px bg-black block transition-all"></span>
     </button>
   </div>
 
   <!-- Mobile menu -->
-  <div id="mobile-menu" class="hidden md:hidden bg-fd-black/95 backdrop-blur-sm border-t border-fd-cream/10">
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-black/10">
     <nav class="flex flex-col px-6 py-6 gap-5">
       {navLinks.map(link => (
         <a
           href={link.href}
-          class={`font-display text-2xl tracking-[0.1em] uppercase transition-colors hover:text-fd-red ${currentPath === link.href ? 'text-fd-red' : 'text-fd-cream'}`}
+          class={`font-display text-2xl italic tracking-wide transition-opacity hover:opacity-40 ${currentPath === link.href ? 'opacity-100' : 'opacity-70'}`}
         >
           {link.label}
         </a>
@@ -58,16 +58,14 @@ const currentPath = Astro.url.pathname;
   const toggle = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
 
-  // Scroll effect: add solid bg after scrolling
   window.addEventListener('scroll', () => {
     if (window.scrollY > 60) {
-      nav?.classList.add('bg-fd-black/90', 'backdrop-blur-sm', 'border-b', 'border-fd-cream/10');
+      nav?.classList.add('bg-white/95', 'backdrop-blur-sm', 'border-b', 'border-black/10');
     } else {
-      nav?.classList.remove('bg-fd-black/90', 'backdrop-blur-sm', 'border-b', 'border-fd-cream/10');
+      nav?.classList.remove('bg-white/95', 'backdrop-blur-sm', 'border-b', 'border-black/10');
     }
   });
 
-  // Mobile toggle
   toggle?.addEventListener('click', () => {
     mobileMenu?.classList.toggle('hidden');
   });

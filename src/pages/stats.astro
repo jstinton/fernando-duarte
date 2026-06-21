@@ -5,11 +5,10 @@ import site from '../content/site.json';
 
 <Layout title="Stats & Measurements — Fernando Duarte" description="Measurements and stats for Fernando Duarte — professional dancer and model.">
   <div class="pt-32 pb-24">
-    <!-- Cream header band -->
-    <div class="bg-fd-cream text-fd-black px-6 py-12 mb-16">
+    <div class="border-b border-black/10 px-6 py-12 mb-16">
       <div class="max-w-screen-xl mx-auto flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-        <h1 class="font-display text-[clamp(3rem,8vw,8rem)] leading-none uppercase">Stats</h1>
-        <p class="font-body text-sm text-fd-black/60 max-w-xs">
+        <h1 class="font-display text-[clamp(3rem,8vw,8rem)] leading-none font-black text-black">Stats</h1>
+        <p class="font-body text-sm text-black/50 max-w-xs">
           Measurements for Fernando Duarte. All sizes confirmed as of latest agency submission.
         </p>
       </div>
@@ -17,17 +16,16 @@ import site from '../content/site.json';
 
     <div class="px-6 max-w-screen-xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
-        <!-- Stats table -->
         <div>
-          <p class="font-body text-xs tracking-[0.35em] uppercase text-fd-red mb-8">Measurements</p>
+          <p class="font-body text-[11px] tracking-[0.35em] uppercase text-black/30 mb-8">Measurements</p>
           <table class="w-full">
             <tbody>
               {Object.entries(site.stats).map(([key, val]) => (
-                <tr class="border-b border-fd-cream/10">
-                  <td class="font-body text-xs tracking-[0.25em] uppercase text-fd-cream/40 py-5 pr-8 w-32 align-top">{key}</td>
-                  <td class="font-body text-sm text-fd-cream py-5">
+                <tr class="border-b border-black/8">
+                  <td class="font-body text-[11px] tracking-[0.25em] uppercase text-black/30 py-5 pr-8 w-32 align-top">{key}</td>
+                  <td class="font-body text-sm text-black py-5">
                     {val.startsWith('[') ? (
-                      <span class="text-fd-cream/20 italic text-xs">{val}</span>
+                      <span class="text-black/20 italic text-xs">{val}</span>
                     ) : val}
                   </td>
                 </tr>
@@ -36,35 +34,34 @@ import site from '../content/site.json';
           </table>
 
           <div class="mt-12 flex gap-4">
-            <a href="/digitals" class="inline-block font-body text-xs tracking-[0.2em] uppercase border border-fd-cream/30 text-fd-cream px-6 py-3 hover:border-fd-red hover:text-fd-red transition-colors">
+            <a href="/digitals" class="inline-block font-body text-[11px] tracking-[0.25em] uppercase border border-black text-black px-6 py-3 hover:bg-black hover:text-white transition-colors">
               View Digitals
             </a>
-            <a href="/contact" class="inline-block font-body text-xs tracking-[0.2em] uppercase bg-fd-red text-fd-cream px-6 py-3 hover:bg-fd-cream hover:text-fd-black transition-colors">
+            <a href="/contact" class="inline-block font-body text-[11px] tracking-[0.25em] uppercase bg-black text-white px-6 py-3 hover:bg-black/70 transition-colors">
               Book Fernando
             </a>
           </div>
         </div>
 
-        <!-- Comp card style summary -->
-        <div class="border border-fd-cream/10 p-8 self-start">
-          <p class="font-body text-xs tracking-[0.35em] uppercase text-fd-red mb-6">Comp Card</p>
-          <div class="aspect-[2/3] bg-fd-gray border border-fd-cream/5 flex items-center justify-center mb-6">
-            <p class="font-body text-xs text-fd-cream/20 tracking-widest uppercase text-center px-4">
+        <div class="border border-black/10 p-8 self-start">
+          <p class="font-body text-[11px] tracking-[0.35em] uppercase text-black/30 mb-6">Comp Card</p>
+          <div class="aspect-[2/3] bg-black/5 flex items-center justify-center mb-6">
+            <p class="font-body text-xs text-black/20 tracking-widest uppercase text-center px-4">
               Add headshot to<br />/images/digitals/
             </p>
           </div>
-          <p class="font-display text-2xl uppercase text-fd-cream mb-1">Fernando Duarte</p>
-          <p class="font-body text-xs tracking-[0.25em] uppercase text-fd-cream/40 mb-4">they/them · Dancer &amp; Model</p>
+          <p class="font-display text-2xl font-black text-black mb-1">Fernando Duarte</p>
+          <p class="font-body text-[11px] tracking-[0.25em] uppercase text-black/40 mb-4">they/them · Dancer &amp; Model</p>
           <div class="space-y-1">
             {Object.entries(site.stats).slice(0, 4).map(([key, val]) => (
-              <p class="font-body text-xs text-fd-cream/50">
-                <span class="text-fd-cream/30 uppercase tracking-wider">{key}: </span>
-                {val.startsWith('[') ? <span class="italic text-fd-cream/20">{val}</span> : val}
+              <p class="font-body text-xs text-black/50">
+                <span class="text-black/30 uppercase tracking-wider">{key}: </span>
+                {val.startsWith('[') ? <span class="italic text-black/20">{val}</span> : val}
               </p>
             ))}
           </div>
-          <div class="mt-6 pt-6 border-t border-fd-cream/10">
-            <a href="/contact" class="font-body text-xs tracking-[0.2em] uppercase text-fd-red hover:text-fd-cream transition-colors">
+          <div class="mt-6 pt-6 border-t border-black/10">
+            <a href="/contact" class="font-body text-xs tracking-[0.2em] uppercase text-black/50 hover:text-black transition-colors">
               {site.contact.email}
             </a>
           </div>
